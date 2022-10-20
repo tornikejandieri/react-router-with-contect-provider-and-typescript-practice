@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import First from './First';
 
+export const textContext = createContext('')
 
 function App() {
-  const [text, setText] = useState('this text should go to the third component')
+
+  const [text, setText] = useState<string>('this text should go into the third component')
   return (
-    <div className="App">
-      <First text={text}/>
-    </div>
+    <textContext.Provider value={text}>
+      <div className="App">
+        <First />
+      </div>
+    </textContext.Provider>
+    
   );
 }
 

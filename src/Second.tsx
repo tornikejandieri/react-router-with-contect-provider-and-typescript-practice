@@ -1,10 +1,10 @@
 import Third from "./Third";
-interface Props {text: string}
-const Second: React.FC<Props> = ({text}) => {
+
+const Second: React.FC = () => {
   return ( 
     <div>
-      <p>This is second component</p>
-      <Third text={text} />
+      <h3>Second Component</h3>
+      <Third />
     </div>
    );
 }

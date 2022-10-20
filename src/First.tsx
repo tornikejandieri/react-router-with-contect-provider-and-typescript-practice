@@ -1,10 +1,10 @@
 import Second from "./Second";
-interface Props {text: string}
-const First: React.FC<Props> = ({text}) => {
+
+const First: React.FC = () => {
   return ( 
     <div>
-      <p>component one:</p>
-      <Second text={text}/>
+      <h3>First Component</h3>
+      <Second />
     </div>
    );
 }

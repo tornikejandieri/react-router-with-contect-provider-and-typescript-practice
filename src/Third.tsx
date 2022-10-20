@@ -1,8 +1,12 @@
-interface Props {text: string}
-const Third: React.FC<Props> = ({text}) => {
+import { useContext } from "react";
+import { textContext } from "./App";
+
+const Third: React.FC = () => {
+ const text = useContext(textContext)
   return ( 
     <div>
-      <p> 3{text}</p>
+      <h3>Third Component</h3>
+      <p>{text}</p>
     </div>
    );
 }
