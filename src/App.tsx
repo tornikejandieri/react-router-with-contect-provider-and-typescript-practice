@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import First from './First';
 
+import Counter from './Counter';
+import { Router } from 'react-router-dom';
+
 export const textContext = createContext('')
 
 function App() {
@@ -12,9 +15,9 @@ function App() {
     <textContext.Provider value={text}>
       <div className="App">
         <First />
+        
       </div>
-    </textContext.Provider>
-    
+    </textContext.Provider>   
   );
 }
 
