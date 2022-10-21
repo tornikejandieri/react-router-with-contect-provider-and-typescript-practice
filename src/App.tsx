@@ -1,23 +1,27 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import First from './First';
 
 import Counter from './Counter';
-import { Router } from 'react-router-dom';
 
-export const textContext = createContext('')
+export interface IContext {
+  text: string,
+}
+
+export const MyContext = createContext<IContext>({
+  text: 'This text goes into the third component.'
+})
+
+export const text: IContext = { text: 'This text goes into the third component.'}
 
 function App() {
-
-  const [text, setText] = useState<string>('this text should go into the third component')
   return (
-    <textContext.Provider value={text}>
+    <MyContext.Provider value={text}>
       <div className="App">
         <First />
-        
       </div>
-    </textContext.Provider>   
+    </MyContext.Provider>
   );
 }
 

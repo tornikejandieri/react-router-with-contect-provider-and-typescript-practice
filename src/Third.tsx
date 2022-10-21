@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { textContext } from "./App";
+import {  MyContext } from "./App";
 
 const Third: React.FC = () => {
- const text = useContext(textContext)
+ const appContext = useContext(MyContext)
   return ( 
     <div>
       <h3>Third Component</h3>
-      <p>{text}</p>
+      {appContext.text}
     </div>
    );
 }
